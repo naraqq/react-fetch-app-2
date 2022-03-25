@@ -6,12 +6,20 @@ import './App.css';
 
 class App extends Component {
 
-  
+
   constructor() {
     super();
-    this.state = {}
+    this.state = {
+      gifs : [],
+
+    }
   }
 
+  componentDidMount() {
+    fetch("http://random")
+    .then(response => response.json())
+    .then(data => console.log(data))
+  }
 
   render() { 
     return (
