@@ -7,8 +7,11 @@ class SearchForm extends Component {
             <div>
                 <form className='search-form'>
                     <label className='is-hidden' htmlFor='search'>Search</label>
-                    <input placeholder='Search....' />
+                    <input type="search" name='search' placeholder='Search...' />
+                    <button type='submit' id='submit' className='search-button'>+</button>
+                    <i className='material-icons icn-search'></i>
                 </form>
+
             </div>
         );
     }
