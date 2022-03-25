@@ -2,7 +2,6 @@ import React from 'react';
 import Gif from './Gif';
 
 function GifList(props) {
-    console.log(props.data);
 
     let result = props.data;
     let gifs = result.map(e => (
