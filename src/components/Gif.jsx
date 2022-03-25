@@ -1,9 +1,9 @@
 import React from 'react';
 
-function Gif() {
+function Gif(props) {
     return ( 
         <li className='gif-wrap'>
-            <img alt=''></img>
+            <img src={props.url}></img>
         </li>
      );
 }

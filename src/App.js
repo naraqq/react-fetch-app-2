@@ -10,15 +10,18 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      gifs : [],
-
+      gifs : []
     }
   }
 
   componentDidMount() {
-    fetch("http://random")
+    
+    fetch("http://api.giphy.com/v1/gifs/trending?api_key=uhIwPD3GPqS3iLTrhbYg3ZhKvf5RsJbJ")
     .then(response => response.json())
-    .then(data => console.log(data))
+    .then(res =>  {
+      this.setState({gifs: res.data})
+    })
+    .catch(err => console.log("error fetching and parsing data!", err))
   }
 
   render() { 
@@ -26,10 +29,10 @@ class App extends Component {
       <div className="main-header">
         <div className='inner'>
           <h1 className='main-title'>Search App</h1>
-          <SearchForm/>
+          <SearchForm data={this.state.gifs} />
         </div>
         <div className='main-content'>
-          <GifList/>
+          <GifList data={this.state.gifs}/>
         </div>
       </div>
     );
