@@ -3,7 +3,7 @@ import React from 'react';
 function Gif(props) {
     return ( 
         <li className='gif-wrap'>
-            <img src={props.url}></img>
+            <img alt='randomImg' src={props.url}></img>
         </li>
      );
 }
